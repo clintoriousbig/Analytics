@@ -1,0 +1,12 @@
+Analytics/
+├── data/                  # Your CSVs go here
+│   ├── AUS1D.csv
+│   ├── SPX1D.csv
+│   └── ...
+├── sql/                   # Your SQL queries (modular files)
+│   └── daily_analysis.sql
+├── scripts/
+│   └── run_query.py       # Your main Python runner
+├── results/
+│   └── results.html       # Outputs go here
+└── matched_dates.json

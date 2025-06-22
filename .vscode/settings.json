@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "name": "AnalyticsDB",
+            "database": "${workspaceFolder:Analytics}/analytics.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
