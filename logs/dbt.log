@@ -1,0 +1,24 @@
+[0m20:11:43.564142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058fa8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067b6dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067b6be0>]}
+
+
+============================== 20:11:43.566311 | 54421ac8-e263-436d-8676-0a6d830845f3 ==============================
+[0m20:11:43.566311 [info ] [MainThread]: Running with dbt=1.10.1
+[0m20:11:43.566575 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/clintgilmore/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init market_analysis_dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:11:43.576311 [debug] [MainThread]: Starter project path: /Users/clintgilmore/Library/Python/3.9/lib/python/site-packages/dbt/include/starter_project
+[0m20:11:43.579680 [info ] [MainThread]: 
+Your new dbt project "market_analysis_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:11:43.579877 [info ] [MainThread]: Setting up your profile.
