@@ -1,1 +1,0 @@
-SELECT * FROM aus_1d;
