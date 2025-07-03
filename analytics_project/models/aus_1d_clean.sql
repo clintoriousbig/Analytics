@@ -1,4 +1,3 @@
--- models/aus_1d_clean.sql
 SELECT
   CAST(time AS TIMESTAMP) AS time,
   CAST(open AS DOUBLE) AS open,
