@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: market_data
+    schema: main  # Required for DuckDB
+    tables:
+      - name: AUS_1d
+        description: "Daily data for AUS200"
+      - name: AUS_1h
+        description: "Hourly data for AUS200"
+      - name: SPX_1d
+        description: "Daily data for SPX500"
+      - name: UK_1d
+        description: "Daily data for UK100"
+      - name: AUD_1d
+        description: "Daily data for AUD/USD"
+      - name: BCO_1d
+        description: "Daily data for Brent Crude Oil"
+      - name: XAU_1d
+        description: "Daily data for Gold (XAU/USD)"
+
+models:
+  - name: aus_1d_clean
+    description: "Cleans AUS_1d data by casting columns to proper types"
+    columns:
+      - name: time
+        description: "Timestamp of the data"
+      - name: open
+        description: "Opening price"
+      - name: close
+        description: "Closing price"
+      - name: high
+        description: "Daily high"
+      - name: low
+        description: "Daily low"
+      - name: volume
+        description: "Trading volume"
