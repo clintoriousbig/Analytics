@@ -12,7 +12,7 @@ joined AS (
     LAG(spx.spx_close) OVER (ORDER BY spx_time) AS spx_prev_close
   FROM aus
   LEFT JOIN spx
-    ON DATE(aus.time) = DATE(spx.spx_time)
+  ON aus.time::DATE = spx.spx_time::DATE
 ),
 filtered AS (
   SELECT *,

@@ -1,5 +1,5 @@
 WITH aus AS (
-  SELECT * FROM {{ ref('stg_aus_1d') }}
+  SELECT * FROM {{ ref('int_aus_1d') }}
 ),
 spx AS (
   SELECT time AS spx_time, close AS spx_close
@@ -12,11 +12,11 @@ joined AS (
     LAG(spx.spx_close) OVER (ORDER BY spx_time) AS spx_prev_close
   FROM aus
   LEFT JOIN spx
-    ON DATE(aus.time) = DATE(spx.spx_time)
+    ON aus.time::DATE = spx.spx_time::DATE
 ),
 filtered AS (
   SELECT *,
-    ROUND((spx_close - spx_prev_close) / spx_prev_close, 4) AS spx_return
+  ROUND((spx_close - spx_prev_close) / spx_prev_close, 4) AS spx_return
   FROM joined
   WHERE strftime('%w', time) IN ('1', '2', '3', '4', '5')  -- weekdays
 )
