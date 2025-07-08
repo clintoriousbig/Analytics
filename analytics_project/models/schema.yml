@@ -10,6 +10,8 @@ sources:
         description: "Hourly data for AUS200"
       - name: SPX_1d
         description: "Daily data for SPX500"
+      - name: SPX_1h
+        description: "Hourly data for SPX500"
       - name: UK_1d
         description: "Daily data for UK100"
       - name: AUD_1d
@@ -18,66 +20,4 @@ sources:
         description: "Daily data for Brent Crude Oil"
       - name: XAU_1d
         description: "Daily data for Gold (XAU/USD)"
-
-models:
-  - name: aus_1d_clean
-    description: "Cleans AUS_1d data by casting columns to proper types"
-    columns:
-      - name: time
-        description: "Timestamp of the data"
-      - name: open
-        description: "Opening price"
-      - name: close
-        description: "Closing price"
-      - name: high
-        description: "Daily high"
-      - name: low
-        description: "Daily low"
-      - name: volume
-        description: "Trading volume"
-  - name: aus_1d_features
-    description: "Adds daily return, ATR, and volatility regime to AUS_1d"
-    columns:
-      - name: daily_return
-        description: "Percent change from previous close"
-      - name: atr_14
-        description: "14-period Average True Range"
-      - name: volatility_class
-        description: "low / medium / high volatility regime"
-  - name: rpt_aus_spx_move
-    description: >
-      Filters AUS200 daily data on days where SPX rose more than 1%. 
-      Joins AUS features with SPX 1D close, calculates SPX daily return, 
-      and only keeps weekday sessions with a valid previous SPX close.
-    columns:
-      - name: time
-        description: Timestamp of the AUS200 record.
-      - name: close
-        description: Closing price of AUS200.
-      - name: volume
-        description: Trading volume of AUS200.
-      - name: true_range
-        description: True range of AUS200 on the day.
-      - name: atr_14
-        description: 14-day average true range of AUS200.
-      - name: daily_return
-        description: Daily return of AUS200 as (close - prev_close) / prev_close.
-      - name: volatility_class
-        description: Volatility classification based on ATR value.
-      - name: spx_close
-        description: SPX500 closing price on the same date as AUS200.
-      - name: spx_prev_close
-        description: SPX500 closing price from the previous day.
-      - name: spx_return
-        description: SPX500 daily return as (close - prev_close) / prev_close, used for filtering.
-  - name: rpt_aus_1d_filtered
-    description: "Adds daily return, ATR, and volatility regime to AUS_1d"
-    columns:
-      - name: daily_return
-        description: "Percent change from previous close"
-      - name: atr_14
-        description: "14-period Average True Range"
-      - name: volatility_class
-        description: "low / medium / high volatility regime"
-  
 
